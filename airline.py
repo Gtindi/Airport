@@ -6,10 +6,10 @@ import matplotlib.pyplot as plt
 
 # plt.figure(figsize=(12,8))
 # nx.draw_networkx(df, with_labels=True)
-data = pd.read_csv('data.csv')
-type(data)
+dp = pd.read_csv('data.csv')
+print(dp)
 
-# df = nx.from_pandas_edgelist(data, source='Origin', target='Dest', edge_attr=True)
+df = nx.from_pandas_edgelist(data, source='Origin', target='Dest', edge_attr=True)
 # df.nodes()
 # df.edges()
 # # % matplotlib inline
