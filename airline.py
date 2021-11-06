@@ -1,23 +1,25 @@
-import matplotlib
+# Install the following modules:   &&   Ensure 'data.csv' file is within the same file directory
+# pip install pandas
+# pip install networkx
+# pip install matplotlib
+
+# Step 1: Import Packages and classes
 import pandas as pd
-import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 
+# Step 2: Provide data from the tables
 dp = pd.read_csv('data.csv')
-# print(dp)
+print(dp)
 
 df = nx.from_pandas_edgelist(dp, source='Origin', target='Dest', edge_attr=True)
-# print(df.nodes)
-# print(df.edges)
-# df.edges()
+print(df.nodes)
+print(df.edges)
 
-
-plt.figure(figsize=(12,8))
+# Step 3: Creating a graph
+plt.figure(figsize=(12, 8))
 x = nx.draw_networkx(df, with_labels=True)
-# print(plt.show())
+print(plt.show())
 shortest_path_distance = nx.dijkstra_path(df, source='AMA', target='PBI', weight='Distance')
-print(shortest_path_distance)
+print(shortest_path_distance)   # Comment line 15 to display output
 
-# shortest_path_airtime = nx.dijkstra_path(df, source='AMA', target='PBI', weight='AirTime')
-# shortest_path_airtime
