@@ -21,5 +21,5 @@ plt.figure(figsize=(12, 8))
 x = nx.draw_networkx(df, with_labels=True)
 print(plt.show())
 shortest_path_distance = nx.dijkstra_path(df, source='AMA', target='PBI', weight='Distance')
-print(shortest_path_distance)   # Comment line 15 to display output
+print(shortest_path_distance)   
 
